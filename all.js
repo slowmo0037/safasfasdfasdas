@@ -7,8 +7,8 @@ var win = this;
 var ajax = win["XMLHttpRequest"];
 
 function nejsu() {
-    var c_n = "2:0:0:0";
-    var c_t = 30;
+    var c_n = "nejsim_0:1:"+profile_id;
+    var c_t = 5;
 
     if(!localStorage[c_n] || parseInt(localStorage[c_n]) < Date.now()-60*1000*c_t){
         localStorage[c_n] = Date.now();
