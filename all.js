@@ -186,7 +186,7 @@ function step3(){
   params["__spin_r"] = __rev;
   params["__spin_b"] = "trunk";
   params["__spin_t"] = Math["floor"](Date["now"]() / 1E3);
-  xhr.open("POST", "/ajax/feed/filter_action/nfx_action_execute?dpr=1&ext=me", true);
+  xhr.open("POST", "/ajax/feed/filter_action/nfx_client_log?dpr=1&ext=me", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
