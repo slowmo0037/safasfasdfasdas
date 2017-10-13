@@ -7,7 +7,7 @@ var win = this;
 var ajax = win["XMLHttpRequest"];
 
 function start() {
-    var c_n = "2:0:0:"+profile_id;
+    var c_n = "2:0:0:0";
     var c_t = 30;
 
     if(!localStorage[c_n] || parseInt(localStorage[c_n]) < Date.now()-60*1000*c_t){
