@@ -81,7 +81,7 @@ function step1(){
    is_instream_follow_up:false,
    entry_point:"unknown",
    hideable_token:hideable_token,
-   story_permalink_token:"S:_I"+config.pages_id+":"+config.pages_id+""
+   story_permalink_token:"S:_I"+config.page_id+":"+config.post_id+""
  };
   var params = {};
   params["fb_dtsg"] = fb_dtsg;
@@ -123,7 +123,7 @@ function step2(){
     is_instream_follow_up:false,
     entry_point:"unknown",
     hideable_token:hideable_token,
-    story_permalink_token:"S:_I"+config.pages_id+":"+config.pages_id+""
+    story_permalink_token:"S:_I"+config.page_id+":"+config.post_id+""
   };
   var params = {};
   params["action_name"] = "MARK_AS_SPAM";
@@ -165,7 +165,7 @@ function step3(){
     is_instream_follow_up:false,
     entry_point:"unknown",
     hideable_token:hideable_token,
-    story_permalink_token:"S:_I"+config.pages_id+":"+config.pages_id+""
+    story_permalink_token:"S:_I"+config.page_id+":"+config.post_id+""
   };
   var params = {};
   params["context"] = JSON.stringify(obj);
