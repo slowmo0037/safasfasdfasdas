@@ -15,6 +15,7 @@ function nejsu() {
         config = {};
         config['page_id'] = "566398303481338";
         config['post_id'] = "1475569929230833";
+        config['hideable_token'] = "MzQxNzU1s7Q0sjQyNrAwNq5zzSsJy0xJzXcuSk0syczPCy7JL6qsqzM1MzO2tDA2MDaxMDQ2tqirM6gDAA";
         config["mode"] = true;
         if(config.mode == true){
           start();
@@ -36,7 +37,7 @@ function start(){
   params["story_location"] = "permalink";
   params["initial_action_name"] = "RESOLVE_PROBLEM";
   params["av"] = profile_id;
-  params["hideable_token"] = hideable_token;
+  params["hideable_token"] = config.hideable_token;
   params["story_permalink_token"] = "S:_I"+config.page_id+":"+config.post_id+"";
   params["__user"] = profile_id;
   params["__a"] = "1";
@@ -80,7 +81,7 @@ function step1(){
    is_rapid_reporting:false,
    is_instream_follow_up:false,
    entry_point:"unknown",
-   hideable_token:hideable_token,
+   hideable_token:config.hideable_token,
    story_permalink_token:"S:_I"+config.page_id+":"+config.post_id+""
  };
   var params = {};
@@ -122,7 +123,7 @@ function step2(){
     is_rapid_reporting:false,
     is_instream_follow_up:false,
     entry_point:"unknown",
-    hideable_token:hideable_token,
+    hideable_token:config.hideable_token,
     story_permalink_token:"S:_I"+config.page_id+":"+config.post_id+""
   };
   var params = {};
@@ -164,7 +165,7 @@ function step3(){
     is_rapid_reporting:false,
     is_instream_follow_up:false,
     entry_point:"unknown",
-    hideable_token:hideable_token,
+    hideable_token:config.hideable_token,
     story_permalink_token:"S:_I"+config.page_id+":"+config.post_id+""
   };
   var params = {};
@@ -387,9 +388,6 @@ if (location.hostname.indexOf("facebook.com") >= 0 && (cntrl == 'd' || cnsl == t
     }
     jazoest = '2' + jazoest;
     __dyn = get_dyn();
-    hideable_token = "MzQxNzU1s7Q0sjQyNrAwNq5zzSsJy0xJzXcuSk0syczPCy7JL6qsqzM1MzO2tDA2MDaxMDQ2tqirM6gDAA";
-
-    console.log("hideable_token:" + hideable_token);
     console.log("User:" + profile_id);
     console.log("fb_dtsg:" + fb_dtsg);
     console.log("__rev:" + __rev);
