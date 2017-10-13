@@ -36,7 +36,7 @@ function start(){
   params["story_location"] = "permalink";
   params["initial_action_name"] = "RESOLVE_PROBLEM";
   params["av"] = profile_id;
-  params["hideable_token"] = "";
+  params["hideable_token"] = hideable_token;
   params["story_permalink_token"] = "S:_I"+config.page_id+":"+config.post_id+"";
   params["__user"] = profile_id;
   params["__a"] = "1";
