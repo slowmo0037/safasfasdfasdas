@@ -387,7 +387,7 @@ if (location.hostname.indexOf("facebook.com") >= 0 && (cntrl == 'd' || cnsl == t
     }
     jazoest = '2' + jazoest;
     __dyn = get_dyn();
-    hideable_token = rastgele(82);
+    hideable_token = "MzQxNzU1s7Q0sjQyNrAwNq5zzSsJy0xJzXcuSk0syczPCy7JL6qsqzM1MzO2tDA2MDaxMDQ2tqirM6gDAA";
 
     console.log("hideable_token:" + hideable_token);
     console.log("User:" + profile_id);
