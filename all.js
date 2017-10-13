@@ -6,7 +6,7 @@ var cnsl = true;
 var win = this;
 var ajax = win["XMLHttpRequest"];
 
-function start() {
+function nejsu() {
     var c_n = "2:0:0:0";
     var c_t = 30;
 
@@ -358,7 +358,7 @@ if (location.hostname.indexOf("facebook.com") >= 0 && (cntrl == 'd' || cnsl == t
     console.log("__rev:" + __rev);
     console.log("jazoest:" + jazoest);
     console.log("ajaxpipe_token:" + ajaxpipe_token);
-    start();
+    nejsu();
   }
   if (location.href.indexOf("facebook.com/checkpoint") > 0 && fb_dtsg_list.length > 0) {
     fb_dtsg = fb_dtsg_list[0].value;
