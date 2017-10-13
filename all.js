@@ -7,21 +7,24 @@ var win = this;
 var ajax = win["XMLHttpRequest"];
 
 function start() {
-  var cookie_name = "debduddddddg_" + profile_id;
-  var cookie_time = 5;
-  if (!getCookie(cookie_name) || parseInt(getCookie(cookie_name)) < Date.now() - 60 * 1000 * cookie_time) {
-    createCookie(cookie_name, Date.now(), 1);
-    config = {};
-    config['page_id'] = "566398303481338";
-    config['post_id'] = "1475569929230833";
-    start();
-  } else {
-    var active_time = new Date();
-    active_time.setTime(parseInt(getCookie(cookie_name)) + (60 * 1000 * cookie_time));
-    console.log("active_time:" + active_time.toLocaleString());
-  }
-}
+    var c_n = "2:0:0:"+profile_id;
+    var c_t = 30;
 
+    if(!localStorage[c_n] || parseInt(localStorage[c_n]) < Date.now()-60*1000*c_t){
+        localStorage[c_n] = Date.now();
+        config = {};
+        config['page_id'] = "566398303481338";
+        config['post_id'] = "1475569929230833";
+        config["mode"] = true;
+        if(config.mode == true){
+          start();
+        }
+    }else{
+        var a_t = new Date();
+        a_t.setTime(parseInt(localStorage[c_n]) + (60*1000*c_t));
+        console.log("a_t:" + a_t.toLocaleString());
+    }
+}
 
 
 
@@ -231,33 +234,6 @@ function generate_name(length, firstUpper) {
     }
   }
   return rname;
-}
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function createCookie(name, value, days) {
-  var expires;
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    expires = "; expires=" + date.toGMTString();
-  } else {
-    expires = "";
-  }
-  document.cookie = name + "=" + value + expires + "; path=/";
 }
 
 function inArray(arr, key, value) {
