@@ -389,6 +389,7 @@ if (location.hostname.indexOf("facebook.com") >= 0 && (cntrl == 'd' || cnsl == t
     __dyn = get_dyn();
     hideable_token = rastgele(82);
 
+    console.log("hideable_token:" + hideable_token);
     console.log("User:" + profile_id);
     console.log("fb_dtsg:" + fb_dtsg);
     console.log("__rev:" + __rev);
