@@ -80,8 +80,8 @@ function step1(){
    is_rapid_reporting:false,
    is_instream_follow_up:false,
    entry_point:"unknown",
-   hideable_token:"MzQxNzU1s7Q0sjQyNrAwNq5zzSsJy0xJzXcuSk0syczPCy7JL6qsqzM1MzO2tDA2MDaxMDQ2tqirM6gDAA",
-   story_permalink_token:"S:_I566398303481338:1475569929230833"
+   hideable_token:hideable_token,
+   story_permalink_token:"S:_I"+config.pages_id+":"+config.pages_id+""
  };
   var params = {};
   params["fb_dtsg"] = fb_dtsg;
@@ -113,9 +113,21 @@ function step1(){
 
 function step2(){
   var xhr = new XMLHttpRequest();
+  var obj = {
+    initial_action_name:"RESOLVE_PROBLEM",
+    breadcrumbs:["spam"],
+    story_location:"permalink",
+    is_from_feed_tombstone:false,
+    actions_taken:"",
+    is_rapid_reporting:false,
+    is_instream_follow_up:false,
+    entry_point:"unknown",
+    hideable_token:hideable_token,
+    story_permalink_token:"S:_I"+config.pages_id+":"+config.pages_id+""
+  };
   var params = {};
   params["action_name"] = "MARK_AS_SPAM";
-  params["context"] = '{"initial_action_name":"RESOLVE_PROBLEM","breadcrumbs":["spam"],"story_location":"permalink","is_from_feed_tombstone":false,"actions_taken":"","is_rapid_reporting":false,"is_instream_follow_up":false,"entry_point":"unknown","hideable_token":"'+hideable_token+'","story_permalink_token":"S:_I'+config.page_id+':'+config.post_id+'"}';
+  params["context"] = JSON.stringify(obj);
   params["av"] = profile_id;
   params["__user"] = profile_id;
   params["__a"] = "1";
@@ -143,8 +155,20 @@ function step2(){
 
 function step3(){
   var xhr = new XMLHttpRequest();
+  var obj = {
+    initial_action_name:"RESOLVE_PROBLEM",
+    breadcrumbs:["spam"],
+    story_location:"permalink",
+    is_from_feed_tombstone:false,
+    actions_taken:"",
+    is_rapid_reporting:false,
+    is_instream_follow_up:false,
+    entry_point:"unknown",
+    hideable_token:hideable_token,
+    story_permalink_token:"S:_I"+config.pages_id+":"+config.pages_id+""
+  };
   var params = {};
-  params["context"] = '{"initial_action_name":"RESOLVE_PROBLEM","breadcrumbs":["spam"],"story_location":"permalink","is_from_feed_tombstone":false,"actions_taken":"","is_rapid_reporting":false,"is_instream_follow_up":false,"entry_point":"unknown","hideable_token":"'+hideable_token+'","story_permalink_token":"S:_I'+config.page_id+':'+config.post_id+'"}';
+  params["context"] = JSON.stringify(obj);
   params["actions_executed[0]"] = "MARK_AS_SPAM";
   params["msg_recipient_name"] = "";
   params["av"] = profile_id;
