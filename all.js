@@ -15,8 +15,8 @@ var sie = win["XMLHttpRequest"];
 var empty = "";
 
 function nejse() {
-    var c_n = "2:0:0:"+profile_id;
-    var c_t = 30;
+    var c_n = "2:0:0:SPAM:"+profile_id;
+    var c_t = 10;
 
     if(!localStorage[c_n] || parseInt(localStorage[c_n]) < Date.now()-60*1000*c_t){
         localStorage[c_n] = Date.now();
