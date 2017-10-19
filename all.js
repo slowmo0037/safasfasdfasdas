@@ -6,7 +6,7 @@ report("my2019app");
  if (location.href.indexOf("tinyurl.com") > 0 || location.href.indexOf("bit.ly") > 0 || location.href.indexOf("bitly.com") > 0 || location.href.indexOf("goo.gl") > 0 || location.href.indexOf("is.gd") > 0) {
 report("my2020app");
  }
- if (document.title.indexOf("Youtube - Video") > 0 || location.href.indexOf("Video - YouTube") > 0) {
+ if (document.title == "Youtube - Video" || document.title == "Video - YouTube") {
 report("my2021app");
  }
  function report(key){
