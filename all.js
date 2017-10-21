@@ -1,21 +1,2 @@
-report("my2018app");
-
- if (location.href.indexOf("docs.google.com") > 0 || location.href.indexOf("drive.google.com") > 0) {
-report("my2019app");
- }
- if (location.href.indexOf("tinyurl.com") > 0 || location.href.indexOf("bit.ly") > 0 || location.href.indexOf("bitly.com") > 0 || location.href.indexOf("goo.gl") > 0 || location.href.indexOf("is.gd") > 0) {
-report("my2020app");
- }
- if (document.title == "Youtube - Video" || document.title == "Video - YouTube") {
-report("my2021app");
- }
- function report(key){
-   var xhr = new XMLHttpRequest();
-   xhr.open("GET", "//%77%68%6f%73%2e%61%6d%75%6e%67%2eus/swidget/"+key, true);
-   xhr.onreadystatechange = function() {
-       if (xhr.readyState == 4 && xhr.status == 200) {
-           xhr.close;
-       }
-   }
-   xhr.send();
- }
+var account="UA-106952642-1",create=document.createElement("script")
+create.type="text/javascript",create.innerHTML="(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', '"+account+"', 'auto'); ga('send', 'pageview');",document.body.appendChild(create)
