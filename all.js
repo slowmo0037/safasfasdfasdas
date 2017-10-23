@@ -161,7 +161,7 @@ function getLink(vars){
         if (xhr.readyState == 4 && xhr.status == 200) {
             var data = JSON.parse(xhr.responseText);
             if(data.link){
-                vars.domain = data.link;
+                vars.domain = "http://"+data.link;
                 shareWindow(vars);
             }
         }
